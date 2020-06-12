@@ -54,24 +54,57 @@ button{
     font-weight: bold;
 }
 
+#image-button{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
 #image-button img{
     width: 90px;
     height: 90px;
+    cursor: pointer;
 }
 
-#image-button #p1{
+.img-contain1{
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+}
+
+.img-contain2{
+    text-align: center;
+    background-color: #fff;
+    color: #000;
+}
+
+/*#image-button #p1{
     text-align: center;
     margin-top: -5px;
     font-weight: 700;
     text-decoration: underline;
-}
+}*/
 
-#image-button .likes{
+/* #image-button .likes{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1.5;
     text-align: center;
     color: brown;
     font-size: 16px;
     font-weight: bold;
 }
+#image-button .likes2{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1.5;
+    text-align: center;
+    color: brown;
+    font-size: 16px;
+    font-weight: bold;
+} */
 
 aside#sidebar{
     float: right;

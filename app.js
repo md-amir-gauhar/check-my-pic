@@ -1,9 +1,12 @@
 const button = document.querySelector('button');
 const text = document.querySelector('.text');
-const imgBtn = document.querySelector('#image-button img');
-const likes = document.querySelector('.likes');
+const imgBtn1 = document.querySelector('#image-button .img1');
+const imgBtn2 = document.querySelector('#image-button .img2');
+const countLikes1 = document.querySelector('.likes1');
+const countLikes2 = document.querySelector('.likes2')
 
-let Lcount = 0;
+let imgCounter1 = 0;
+let imgCounter2 = 0;
 
 button.addEventListener('click', e => {
     e.preventDefault();
@@ -21,11 +24,19 @@ button.addEventListener('click', e => {
 
 
 
-imgBtn.addEventListener('click', (e) => {
+imgBtn1.addEventListener('click', (e) => {
     e.preventDefault();
     
-    Lcount += 1;
-    let temp = `${Lcount} Likes`;
-    likes.textContent = temp;
+    imgCounter1 += 1;
+    let temp = `${imgCounter1} Like(s)`;
+    countLikes1.textContent = temp;
+});
+
+imgBtn2.addEventListener('click', (e) => {
+    e.preventDefault();
+    
+    imgCounter2 += 1;
+    let temp1 = `${imgCounter2} Like(s)`;
+    countLikes2.textContent = temp1;
 });
 
