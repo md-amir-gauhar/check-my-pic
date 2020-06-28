@@ -1,11 +1,11 @@
 Project name: Check my pic
 
-Stage 2
+Stage 3
 
-You have successfully got your hands dirty by working with HTML, CSS and JS. :heart_eyes::blush:. You have started your journey to be a front end developer. You deserve an applause for taking the time. :clap:🏼.
-Now, coming to our webpage, I want you to add a new image with it's own clicker count. 
-Let's work on making our webpage more user friendly as well.
-Add title and a caption below the pictures. Use semantic tags to make the HTML code more easier to read.
-Also give unique id to the elements. 
+Congrats on finishing a good responsive website.:+1:🏻:heart_eyes:.
+For our next stage, I want your webapp to take a list of URLs from a JSON file and generate and an image gallery like above. Each file should retain it's clicker count but need not show it in the webpage anymore.
+The clicker count will be updated every time user opens an image.
+The images should be able to be sorted by most visited and least visited.
+Integrate build tools such as webpack and use Airbnb javascript style guide for coding conventions.
 
-Bonus: Make the webpage responsive. The design choice is yours on how you want to make them look like. Use your creativity.
+Bonus: Use Animations for scrolling, opening the images and closing the images. Different grids for tabs, mobile and desktop.

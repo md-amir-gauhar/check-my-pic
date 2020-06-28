@@ -1,15 +1,14 @@
 body{
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
+    margin: 20px;
     padding: 0;
-    font-size: 15px;
-    background-color: #f4f4f4;
+    background: #333;
 }
 
 .container{
-    width: 85%;
+    max-width: 760px;
     margin: auto;
-    overflow: hidden;
+    border: #fff solid 3px;
+    background: #fff;
 }
 
 header{
@@ -25,102 +24,20 @@ header h2{
     text-align: center;
 }
 
-img{
-    height: 500px;
-    width: 500px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-button{
-    height: 28px;
-    display: block;
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    background: #e8491d;
-    border: 0;
-    padding-left: 20px;
-    padding-right: 20px;
+.main-img img, .imgs img{
+    width: 100%;
 }
 
-.button:hover{
-    background-color: black;
-    color: white;
-}
-.text{
-    text-align: center;
-    font-size: 16px;
-    font-weight: bold;
+#current{
+    height: 760px;
 }
 
-#image-button{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
+.imgs{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
 }
 
-#image-button img{
-    width: 90px;
-    height: 90px;
-    cursor: pointer;
-}
-
-.img-contain1{
-    text-align: center;
-    background-color: #000;
-    color: #fff;
-}
-
-.img-contain2{
-    text-align: center;
-    background-color: #fff;
-    color: #000;
-}
-
-/*#image-button #p1{
-    text-align: center;
-    margin-top: -5px;
-    font-weight: 700;
-    text-decoration: underline;
-}*/
-
-/* #image-button .likes{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex: 1.5;
-    text-align: center;
-    color: brown;
-    font-size: 16px;
-    font-weight: bold;
-}
-#image-button .likes2{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex: 1.5;
-    text-align: center;
-    color: brown;
-    font-size: 16px;
-    font-weight: bold;
-} */
-
-aside#sidebar{
-    float: right;
-    max-width: 40%;
-    margin-bottom: 10px;
-    background-color: #35424a;
-    color: #fff;
-}
-
-article#main-col{
-    float: left;
-    max-width: 55%;
-    margin-bottom: 10px;
-    background-color: #35424a;
-    color: #fff;
-}
 
 footer{
     padding: 20px;
@@ -131,14 +48,14 @@ footer{
 }
 
 @media(max-width: 768px){
-    article#main-col, aside#sidebar{
-        float: none;
-        text-align: center;
-        max-width: 100%;
-    }
-
-    img{
+    .main-img img{
         width: 100%;
         height: auto;
+    }
+
+    .imgs{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5px;
     }
 }

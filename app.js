@@ -1,42 +1,41 @@
-const button = document.querySelector('button');
-const text = document.querySelector('.text');
-const imgBtn1 = document.querySelector('#image-button .img1');
-const imgBtn2 = document.querySelector('#image-button .img2');
-const countLikes1 = document.querySelector('.likes1');
-const countLikes2 = document.querySelector('.likes2')
+const current = document.querySelector('#current');
+const imgs = document.querySelectorAll('.imgs img');
+const currentImg = document.querySelector('.main-img');
+const images = document.querySelectorAll('.imgs');
 
-let imgCounter1 = 0;
-let imgCounter2 = 0;
+const opacity = 0.4;
+imgs[0].style.opacity = opacity;
 
-button.addEventListener('click', e => {
-    e.preventDefault();
-    if (typeof(Storage) !== "undefined") {
-        if (localStorage.clickCount) {
-            localStorage.clickCount = Number(localStorage.clickCount)+1;
-        } else {
-            localStorage.clickCount = 1;
-        }
 
-        let html = `<span>You have clicked the button ${localStorage.clickCount} time(s)</span>`;
-        text.innerHTML = html;
+document.addEventListener('DOMContentLoaded', getImage);
+document.addEventListener('DOMContentLoaded', fetchImage);
+
+async function getImage() {
+    const res = await fetch('https://jsonplaceholder.typicode.com/photos/');
+    const data = await res.json();
+    current.src = data[0].url;
+}
+
+async function fetchImage() {
+    let output = null;
+    const res = await fetch(`https://jsonplaceholder.typicode.com/photos/`);
+    const data = await res.json();
+    for(let i=0; i<imgs.length;i++){
+        imgs[i].src = data[i].url;
     }
-});
+}
 
 
+imgs.forEach(img => img.addEventListener('click', imgClick));
 
-imgBtn1.addEventListener('click', (e) => {
-    e.preventDefault();
-    
-    imgCounter1 += 1;
-    let temp = `${imgCounter1} Like(s)`;
-    countLikes1.textContent = temp;
-});
+function imgClick(e) {
+    //Reset the opacity
+    imgs.forEach(img => (img.style.opacity = 1));
 
-imgBtn2.addEventListener('click', (e) => {
-    e.preventDefault();
-    
-    imgCounter2 += 1;
-    let temp1 = `${imgCounter2} Like(s)`;
-    countLikes2.textContent = temp1;
-});
 
+    //Change current image to src of clicked image
+    current.src = e.target.src;
+
+    //change the opacity to opacity var
+    e.target.style.opacity = opacity;
+}
